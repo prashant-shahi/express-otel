@@ -1,0 +1,11 @@
+version: "2.4"
+services:
+  express-otel:
+    image: express-otel
+    ports:
+      - "3000:3000"
+    extra_hosts:
+      - signoz:host-gateway
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://signoz:4317
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=express-otel
