@@ -8,7 +8,7 @@ const { Resource } = require('@opentelemetry/resources');
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
 
 const exporterOptions = {
-  url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT || 'http://stagingapp.signoz.io:4317'
+  url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT || 'http://localhost:4317'
 }
 
 const traceExporter = new OTLPTraceExporter(exporterOptions);
